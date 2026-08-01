@@ -94,18 +94,15 @@ memecahnya akan merusak makna. Aturan ini dikunci oleh tes.
 
 ### Penggunaan Antigravity
 
-Seluruh proyek dikerjakan di dalam Antigravity IDE, yang menjadi wadah alur kerja agentic:
-pengeditan kode, terminal untuk menjalankan pipeline dan tes, serta operasi git berada di satu
-lingkungan yang sama, sehingga siklus *jalankan → baca kegagalan → perbaiki* bisa berputar cepat.
+Seluruh proyek dikerjakan di dalam Antigravity IDE. Editor, terminal, dan pemeriksaan berada di satu
+lingkungan, sehingga siklus *jalankan → baca kegagalan → perbaiki* berputar cepat. Dua contoh:
 
-Dua pekerjaan yang paling terbantu:
-
-- **Perubahan lintas berkas.** Menghapus ekstensi `.js` dari seluruh import menyentuh 20 file
-  sekaligus — dan sempat merusak encoding UTF-8 pada semuanya. Karena editor, terminal, dan
-  pemeriksaan berjalan berdampingan, kerusakan itu terdeteksi lalu dipulihkan dalam satu putaran.
+- **Perubahan lintas berkas.** Menghapus ekstensi `.js` dari seluruh import menyentuh 20 file — dan
+  sempat merusak encoding UTF-8 pada semuanya. Kerusakan itu terdeteksi lalu dipulihkan dalam satu
+  putaran, bukan ditemukan berjam-jam kemudian.
 - **Perbaikan berbasis pengukuran.** Menjalankan `npm run demo` berulang sambil membaca trace tiap
-  agent adalah cara temuan kedua ditemukan: dugaan awal soal enum terbantah, dan penyebab
-  sebenarnya baru terbaca setelah alasan repair dicatat.
+  agent adalah cara temuan kedua ditemukan: dugaan awal soal enum terbantah, penyebab sebenarnya
+  baru terbaca setelah alasan repair dicatat.
 
 ### Integrasi Skills / MCP
 
