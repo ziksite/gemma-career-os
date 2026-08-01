@@ -14,7 +14,7 @@ Gemma Career OS
 ## Anggota Tim
 
 - Dzikri Ramadhan
-- Titoon
+- Titon Meisya Kresna
 
 ## Pernyataan Masalah
 
@@ -181,8 +181,9 @@ dalam ±100 detik → baca dashboard bertab.
 ## Tautan Proyek
 
 - **Repositori publik:** https://github.com/ziksite/gemma-career-os
-- **Aplikasi yang di-deploy (opsional):** belum di-deploy
 - **Demo publik YouTube:** https://youtu.be/I6LVW2rzzZw
+- **Slide presentasi:** https://docs.google.com/presentation/d/1SKbzJjWKBkL9XNDkDTUSqk8rkhjX1Ki_yYRsHnlS7Xc/edit?usp=sharing
+- **Aplikasi yang di-deploy (opsional):** belum di-deploy
 
 ## Instruksi Menjalankan
 

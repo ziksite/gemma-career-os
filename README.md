@@ -3,9 +3,16 @@
 Gemma Hackathon · Cloud Next Extended Jakarta
 
 Gemma Career OS bukan resume builder, bukan ATS checker, bukan job portal. Gemma Career OS adalah
-**AI career partner**: pengguna cukup mengunggah CV dan menyebut tujuan kariernya,
-lalu tujuh agent yang dijalankan Gemma bekerja bersama menghasilkan penilaian,
+**AI career partner**: pengguna cukup menempel CV dan menyebut tujuan kariernya,
+lalu delapan agent yang dijalankan Gemma bekerja bersama menghasilkan penilaian,
 rencana, dan langkah harian yang konkret.
+
+| | |
+|---|---|
+| 🎬 **Demo (3 menit)** | https://youtu.be/I6LVW2rzzZw |
+| 📊 **Slide presentasi** | https://docs.google.com/presentation/d/1SKbzJjWKBkL9XNDkDTUSqk8rkhjX1Ki_yYRsHnlS7Xc/edit?usp=sharing |
+| 📝 **Kaggle write-up** | [Docs/KAGGLE-WRITEUP.md](Docs/KAGGLE-WRITEUP.md) |
+| 🏗️ **Arsitektur & temuan teknis** | [Docs/ARCHITECTURE.md](Docs/ARCHITECTURE.md) |
 
 ```
 CV + "Saya ingin pindah dari QA jadi Product Manager"
