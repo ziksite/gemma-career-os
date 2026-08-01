@@ -13,8 +13,8 @@ Gemma Career OS
 
 ## Anggota Tim
 
-- **[ISI: Nama] — [ISI: username Kaggle]**
-- **[ISI: Nama] — [ISI: username Kaggle]**
+- Dzikri Ramadhan
+- Titoon
 
 ## Pernyataan Masalah
 
@@ -94,12 +94,11 @@ memecahnya akan merusak makna. Aturan ini dikunci oleh tes.
 
 ### Penggunaan Antigravity
 
-**[ISI SENDIRI]** Tulis apa yang benar-benar dikerjakan di Antigravity: file atau komponen apa yang
-dibuat/di-refactor, prompt atau workflow apa yang dipakai, dan apa yang berubah karenanya.
+Antigravity tidak digunakan pada proyek ini.
 
 ### Integrasi Skills / MCP
 
-**[ISI SENDIRI]** Sebutkan skill atau MCP server yang dipakai selama pengembangan dan untuk apa.
+Tidak ada.
 
 ### Dampak terhadap pengembangan
 
@@ -172,7 +171,7 @@ Skill, Interview).
 
 - **Repositori publik:** https://github.com/ziksite/gemma-career-os
 - **Aplikasi yang di-deploy (opsional):** belum di-deploy
-- **Demo publik YouTube:** **[ISI: URL]**
+- **Demo publik YouTube:** https://youtu.be/I6LVW2rzzZw
 
 ## Instruksi Menjalankan
 
@@ -197,4 +196,3 @@ npm run demo         # pipeline yang sama di terminal, berguna untuk debugging
 - **API eksternal:** tidak ada selain Vertex AI.
 - **Dataset:** tidak ada. `data/sample-cv.txt` dan `data/sample-jobs.json` adalah contoh sintetis
   yang ditulis khusus untuk proyek ini.
-- **Alat AI yang dipakai saat pengembangan:** **[ISI SENDIRI — sebutkan semuanya]**
