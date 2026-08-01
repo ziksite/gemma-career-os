@@ -1,6 +1,8 @@
-# Panduan resmi panitia — berisi tautan undangan kompetisi, tidak untuk dipublikasikan.
-# Filenya tetap ada di komputermu, hanya tidak ikut ke GitHub.
+# Catatan kerja & materi panitia — tetap ada di komputer, tidak ikut ke GitHub.
 Docs/soal tantangan.md
+Docs/labtracer.md
+Docs/penjelasankompetinsi.md
+Docs/prompt ide.md
 
 node_modules/
 .env
