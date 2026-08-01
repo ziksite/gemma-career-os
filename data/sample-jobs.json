@@ -1,0 +1,52 @@
+[
+  {
+    "id": "job-001",
+    "title": "Associate Product Manager",
+    "company": "Tokopedia",
+    "location": "Jakarta Selatan",
+    "workType": "hybrid",
+    "salaryIdr": 18000000,
+    "source": "LinkedIn",
+    "description": "Kami mencari Associate Product Manager untuk tim Payment. Requirements: minimal 2 tahun pengalaman di industri teknologi (QA, BA, atau Engineering diterima), memahami product development lifecycle, mampu menulis PRD, terbiasa dengan SQL untuk data analysis, memahami A/B testing dan metrics (retention, conversion, funnel), kemampuan stakeholder management, Bahasa Inggris aktif. Nilai plus: pengalaman di fintech atau e-commerce, pernah memimpin inisiatif lintas tim. Tanggung jawab: mendefinisikan roadmap produk, menulis PRD, berkoordinasi dengan engineering dan design, menganalisis metrik produk, menjalankan eksperimen."
+  },
+  {
+    "id": "job-002",
+    "title": "Senior Product Manager",
+    "company": "Gojek",
+    "location": "Jakarta Selatan",
+    "workType": "hybrid",
+    "salaryIdr": 45000000,
+    "source": "LinkedIn",
+    "description": "Senior Product Manager untuk lini bisnis GoFood. Requirements: minimal 6 tahun pengalaman sebagai Product Manager, track record memimpin produk dengan GMV di atas 100 miliar rupiah per tahun, pengalaman mengelola tim PM, kemampuan strategi produk tingkat lini bisnis, pengalaman P&L ownership. Wajib: pengalaman langsung sebagai PM minimal 6 tahun. Tanggung jawab: memimpin strategi produk GoFood, mengelola 3 PM, bertanggung jawab atas P&L."
+  },
+  {
+    "id": "job-003",
+    "title": "Business Analyst",
+    "company": "Bank Jago",
+    "location": "Jakarta Pusat",
+    "workType": "onsite",
+    "salaryIdr": 15000000,
+    "source": "Jobstreet",
+    "description": "Business Analyst untuk tim Digital Banking. Requirements: minimal 2 tahun pengalaman di IT (QA, BA, atau System Analyst), mampu menulis business requirement document dan user story, memahami SQL untuk query data, terbiasa dengan Agile dan Jira, kemampuan komunikasi dengan stakeholder bisnis. Nilai plus: pengalaman di perbankan atau fintech, memahami proses UAT. Tanggung jawab: menerjemahkan kebutuhan bisnis menjadi spesifikasi teknis, melakukan gap analysis, mendampingi UAT."
+  },
+  {
+    "id": "job-004",
+    "title": "QA Automation Engineer",
+    "company": "Blibli",
+    "location": "Jakarta Barat",
+    "workType": "hybrid",
+    "salaryIdr": 16000000,
+    "source": "Glints",
+    "description": "QA Automation Engineer untuk tim Platform. Requirements: minimal 3 tahun pengalaman QA, menguasai automation testing dengan Selenium atau Cypress, mampu menulis script dengan Java atau JavaScript, memahami CI/CD pipeline, pengalaman API testing dengan Postman atau RestAssured, memahami SQL. Nilai plus: pengalaman performance testing dengan JMeter."
+  },
+  {
+    "id": "job-005",
+    "title": "Product Manager - Payments",
+    "company": "Xendit",
+    "location": "Jakarta Selatan",
+    "workType": "remote",
+    "salaryIdr": 30000000,
+    "source": "Kalibrr",
+    "description": "Product Manager untuk produk Payment Gateway. Requirements: minimal 4 tahun pengalaman product management di fintech atau payment, pemahaman mendalam tentang payment rails dan settlement, pengalaman bekerja dengan API products, kemampuan analisis data dengan SQL dan Amplitude, Bahasa Inggris aktif (tim regional). Tanggung jawab: memiliki roadmap produk payment gateway, bekerja dengan tim engineering di 3 negara."
+  }
+]

@@ -1,0 +1,19 @@
+# Panduan resmi panitia — berisi tautan undangan kompetisi, tidak untuk dipublikasikan.
+# Filenya tetap ada di komputermu, hanya tidak ikut ke GitHub.
+Docs/soal tantangan.md
+
+node_modules/
+.env
+.env.local
+.env.*.local
+secrets/
+*-key.json
+*.pem
+.next/
+next-env.d.ts
+*.tsbuildinfo
+.playwright-mcp/
+dist/
+build/
+.DS_Store
+*.log

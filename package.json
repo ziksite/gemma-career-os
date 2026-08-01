@@ -1,0 +1,35 @@
+{
+  "name": "gemma-career",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Gemma Career OS — AI Career Operating System powered by Gemma on Vertex AI",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "gemma:test": "tsx scripts/test-gemma.ts",
+    "gemma:ask": "tsx scripts/ask.ts",
+    "demo": "tsx scripts/demo-careeros.ts",
+    "route": "tsx scripts/route.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "google-auth-library": "^9.15.1",
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "postcss": "^8.5.25",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

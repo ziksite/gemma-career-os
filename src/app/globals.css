@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+/*
+ * Palet mengikuti sistem warna Google: biru #1A73E8 untuk aksi, permukaan abu
+ * sangat terang, dan warna status memakai varian teks Google (bukan warna brand
+ * mentah) supaya tetap terbaca di latar putih.
+ */
+@theme {
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f3f4;
+  --color-line: #dadce0;
+  --color-line-strong: #bdc1c6;
+
+  --color-ink: #202124;
+  --color-ink-2: #5f6368;
+  --color-ink-3: #80868b;
+
+  --color-accent: #1a73e8;
+  --color-accent-soft: #e8f0fe;
+
+  --color-good: #188038;
+  --color-good-soft: #e6f4ea;
+  --color-warn: #b06000;
+  --color-warn-soft: #fef7e0;
+  --color-bad: #c5221f;
+  --color-bad-soft: #fce8e6;
+
+  /* Empat warna brand Google, dipakai terbatas sebagai aksen. */
+  --color-g-blue: #4285f4;
+  --color-g-red: #ea4335;
+  --color-g-yellow: #fbbc04;
+  --color-g-green: #34a853;
+
+  --font-sans:
+    'Google Sans', 'Product Sans', Roboto, ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'Roboto Mono', 'SF Mono', 'Cascadia Mono', monospace;
+}
+
+html {
+  background: var(--color-bg);
+}
+
+body {
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Label teknis: mono, kecil, berjarak. */
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility animate-rise {
+  animation: rise 0.35s ease-out both;
+}
+
+@utility thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

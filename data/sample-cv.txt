@@ -1,0 +1,41 @@
+DZIKRI RAMADHAN
+QA Engineer | Jakarta Selatan
+dzikri.r@email.com | +62 812-3456-7890 | linkedin.com/in/dzikri-r
+
+RINGKASAN
+QA Engineer dengan 3 tahun pengalaman di perusahaan e-commerce dan fintech.
+Bertanggung jawab atas pengujian aplikasi web dan mobile. Team player yang
+hardworking dan detail oriented.
+
+PENGALAMAN KERJA
+
+QA Engineer — PT Tokoloka Digital (Mar 2023 - sekarang)
+- Melakukan manual testing untuk fitur checkout dan pembayaran
+- Membuat test case dan test scenario untuk setiap sprint
+- Berkoordinasi dengan tim developer untuk bug fixing
+- Membantu Product Manager melakukan user acceptance testing
+- Menemukan dan melaporkan rata-rata 40 bug per bulan lewat Jira
+- Inisiatif membuat dashboard bug trend di Google Sheets yang dipakai 3 tim
+
+QA Tester — CV Sinar Mandiri Tech (Jan 2022 - Feb 2023)
+- Testing aplikasi POS untuk 15 klien retail
+- Membuat dokumentasi hasil testing
+- Melakukan regression testing sebelum rilis
+
+Intern — Startup Warung Pintar (Jun 2021 - Des 2021)
+- Membantu tim QA melakukan smoke testing
+- Belajar automation testing dengan Selenium
+
+PENDIDIKAN
+S1 Sistem Informasi — Universitas Gunadarma (2017 - 2021)
+IPK 3.42
+
+SKILL
+Manual Testing, Test Case Design, Jira, Postman, SQL dasar, Selenium (dasar),
+Google Sheets, Agile/Scrum, Bahasa Inggris (pasif)
+
+SERTIFIKASI
+ISTQB Foundation Level (2022)
+
+ORGANISASI
+Anggota Himpunan Mahasiswa Sistem Informasi (2019-2020)
