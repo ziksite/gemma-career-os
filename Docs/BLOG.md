@@ -177,15 +177,25 @@ hosting, Cloud SQL untuk persistensi Career Twin, Cloud Storage untuk berkas CV,
 menilai lowongan baru di latar belakang, dan Vertex AI Embeddings + pgvector untuk pencocokan awal
 CV↔lowongan.
 
-## Antigravity dan Skills/MCP
+## Antigravity dan Playwright MCP
 
-Terus terang: **Antigravity tidak kami gunakan** pada proyek ini, dan tidak ada integrasi Skills
-atau MCP. Saya menuliskannya apa adanya karena mengarang penggunaan alat lebih merugikan daripada
-kehilangan poin.
+Seluruh proyek dikerjakan di dalam **Antigravity IDE**. Yang paling terasa bukan fitur tunggalnya,
+melainkan siklusnya: editor, terminal, dan pemeriksaan berada di satu tempat, sehingga
+*jalankan → baca kegagalan → perbaiki* berputar tanpa berpindah konteks.
 
-Yang benar-benar terjadi adalah alur kerja berbasis bukti: setiap kegagalan ditelusuri sampai
-penyebabnya terbaca dari data, bukan ditebak. Temuan kedua di atas adalah contohnya — dugaan awal
-saya salah, dan yang membetulkannya bukan intuisi melainkan satu field tambahan di trace.
+Dua momen yang menunjukkan bedanya. Pertama, saat menghapus ekstensi `.js` dari seluruh import —
+menyentuh 20 file sekaligus, dan tanpa sengaja merusak encoding UTF-8 di semuanya (`→` berubah jadi
+`â†'`). Karena semuanya berdampingan, kerusakan itu terdeteksi dan dipulihkan dalam satu putaran,
+bukan ditemukan tiga jam kemudian. Kedua, menjalankan `npm run demo` berulang sambil membaca trace
+tiap agent — itulah cara temuan kedua muncul.
+
+**Playwright MCP** dipakai untuk memverifikasi antarmuka langsung dari alur kerja agent: membuka
+aplikasi, menjalankan alur pengguna penuh sampai dashboard, membaca error konsol, memastikan tidak
+ada scroll horizontal di lebar 420 px.
+
+Dan justru jalur inilah yang menangkap temuan ketiga. Bug kutip tanpa escape **tidak pernah muncul**
+saat pipeline dijalankan lewat terminal. Ia hanya menampakkan diri ketika alurnya benar-benar
+dijalankan lewat browser — persis seperti yang akan dialami pengguna.
 
 ## Yang belum selesai
 

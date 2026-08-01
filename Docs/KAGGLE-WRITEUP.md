@@ -21,13 +21,13 @@ Gemma Career OS
 Mencari kerja di Indonesia berarti menjalankan lima alat terpisah sekaligus: job portal
 (LinkedIn, Jobstreet, Glints, Kalibrr), resume builder, ATS checker, cover letter generator, dan
 simulator interview. Tidak satu pun saling berbagi konteks, sehingga beban integrasinya jatuh ke
-pencari kerja — merekalah yang harus mengingat apa yang sudah dicoba, memindahkan data antar-tab,
-dan memutuskan langkah berikutnya.
+pencari kerja — merekalah yang harus mengingat apa yang sudah dicoba dan memutuskan langkah
+berikutnya.
 
-Hasilnya melamar secara membabi buta. Seratus lamaran, tiga balasan, tanpa pernah tahu bagian mana
-yang gagal: keyword yang kurang, pengalaman yang tidak relevan, atau target yang memang tidak
-realistis sejak awal. Alat yang ada hari ini menjawab pertanyaan. Tidak ada yang berani berkata,
-*"jangan lamar yang ini dulu — perbaiki dua hal berikut lebih dahulu."*
+Hasilnya melamar membabi buta. Seratus lamaran, tiga balasan, tanpa pernah tahu bagian mana yang
+gagal: keyword yang kurang, pengalaman tidak relevan, atau target yang memang tidak realistis sejak
+awal. Alat yang ada menjawab pertanyaan. Tidak ada yang berani berkata, *"jangan lamar yang ini
+dulu — perbaiki dua hal berikut lebih dahulu."*
 
 ## Solusi yang Diusulkan
 
@@ -94,11 +94,28 @@ memecahnya akan merusak makna. Aturan ini dikunci oleh tes.
 
 ### Penggunaan Antigravity
 
-Antigravity tidak digunakan pada proyek ini.
+Seluruh proyek dikerjakan di dalam Antigravity IDE, yang menjadi wadah alur kerja agentic:
+pengeditan kode, terminal untuk menjalankan pipeline dan tes, serta operasi git berada di satu
+lingkungan yang sama, sehingga siklus *jalankan → baca kegagalan → perbaiki* bisa berputar cepat.
+
+Dua pekerjaan yang paling terbantu:
+
+- **Perubahan lintas berkas.** Menghapus ekstensi `.js` dari seluruh import menyentuh 20 file
+  sekaligus — dan sempat merusak encoding UTF-8 pada semuanya. Karena editor, terminal, dan
+  pemeriksaan berjalan berdampingan, kerusakan itu terdeteksi lalu dipulihkan dalam satu putaran.
+- **Perbaikan berbasis pengukuran.** Menjalankan `npm run demo` berulang sambil membaca trace tiap
+  agent adalah cara temuan kedua ditemukan: dugaan awal soal enum terbantah, dan penyebab
+  sebenarnya baru terbaca setelah alasan repair dicatat.
 
 ### Integrasi Skills / MCP
 
-Tidak ada.
+**Playwright MCP** dipakai untuk memverifikasi antarmuka langsung dari alur kerja agent: membuka
+aplikasi, menjalankan alur pengguna penuh sampai dashboard muncul, membaca error konsol, dan
+memastikan tidak ada scroll horizontal pada lebar 420 px.
+
+Jalur inilah yang menangkap temuan ketiga. Kegagalan JSON karena kutip tanpa escape tidak pernah
+muncul saat pipeline dijalankan lewat CLI — hanya terlihat ketika alurnya dijalankan sungguhan
+lewat browser.
 
 ### Dampak terhadap pengembangan
 
@@ -133,39 +150,33 @@ tiruan.
   Server-Sent Events → dashboard hidup. Trace tiap agent diisolasi per-request lewat
   `AsyncLocalStorage`, sehingga dua pengguna bersamaan tidak saling menimpa log.
 
-**Dirancang tetapi belum dibangun** — dicantumkan sebagai desain, bukan klaim implementasi:
-Cloud Run untuk hosting, Cloud SQL (PostgreSQL) untuk persistensi Career Twin, Cloud Storage untuk
-berkas CV yang diunggah, Cloud Tasks untuk penilaian lowongan baru di latar belakang, dan
-Vertex AI Embeddings + pgvector untuk pencocokan awal CV↔lowongan secara semantik.
+**Dirancang tetapi belum dibangun** — desain, bukan klaim implementasi: Cloud Run (hosting),
+Cloud SQL (persistensi Career Twin), Cloud Storage (berkas CV), Cloud Tasks (penilaian lowongan
+baru di latar belakang), dan Vertex AI Embeddings + pgvector (pencocokan awal CV↔lowongan).
 
 ## Fungsionalitas dan Keterbatasan yang Diketahui
 
-**Fitur yang berjalan:** visualisasi delapan agent secara langsung dengan log bertimestamp, parsing
-CV menjadi profil terstruktur, Career Health Score deterministik beserta rincian per komponen, misi
-harian lima hari dengan tugas yang bisa dicentang, ranking lowongan dengan peluang lolos dan
-verdict, analisis keyword dan penghalang wajib ATS, penulisan ulang CV dengan tampilan
-sebelum/sesudah, roadmap belajar terurut dampak, dan pertanyaan interview yang menyasar celah
-kandidat.
+**Fitur yang berjalan:** visualisasi delapan agent dengan log bertimestamp, parsing CV menjadi
+profil terstruktur, Career Health Score deterministik per komponen, misi harian lima hari yang bisa
+dicentang, ranking lowongan dengan peluang lolos dan verdict, analisis keyword dan penghalang wajib
+ATS, penulisan ulang CV sebelum/sesudah, roadmap belajar terurut dampak, dan pertanyaan interview
+yang menyasar celah kandidat.
 
-**Alur pengguna utama:** sebutkan tujuan karier → tempel CV → jalankan analisis → delapan agent
-selesai dalam ±100 detik → baca dashboard bertab (Ringkasan, Career Mission, Lowongan, CV & ATS,
-Skill, Interview).
+**Alur pengguna utama:** sebutkan tujuan → tempel CV → jalankan analisis → delapan agent selesai
+dalam ±100 detik → baca dashboard bertab.
 
 **Keterbatasan yang diketahui:**
 
-1. **Lowongan belum realtime.** Daftarnya berasal dari kumpulan contoh. Penilaian peluangnya nyata,
-   daftarnya yang belum. Hal ini dinyatakan terbuka di dalam aplikasi lewat spanduk "segera
-   realtime", bukan disembunyikan. Berikutnya: tarikan langsung dari LinkedIn, Jobstreet, Glints,
-   dan Kalibrr.
-2. **Unggah PDF baru berupa antarmuka.** Ditampilkan sebagai area unggah bertanda "segera";
-   untuk sekarang pengguna menempel teks CV.
-3. **Belum ada persistensi.** Hasil hanya hidup di state browser, sehingga Career Twin belum tumbuh
-   antar sesi.
+1. **Lowongan belum realtime.** Daftarnya dari kumpulan contoh — penilaian peluangnya nyata,
+   daftarnya belum. Dinyatakan terbuka di dalam aplikasi lewat spanduk "segera realtime".
+   Berikutnya: tarikan langsung dari LinkedIn, Jobstreet, Glints, dan Kalibrr.
+2. **Unggah PDF baru berupa antarmuka**, bertanda "segera"; pengguna menempel teks CV.
+3. **Belum ada persistensi**, sehingga Career Twin belum tumbuh antar sesi.
 4. **Belum ada autentikasi.** Satu pengguna per sesi browser.
-5. **`matchScore` belum terkalibrasi.** Angka itu penilaian Gemma, berguna untuk membandingkan
-   antar-lowongan, bukan probabilitas yang diturunkan dari data penerimaan nyata.
-6. **±100 detik per analisis penuh.** Sudah turun dari 174 detik, tetapi masih terasa lama. Langkah
-   berikutnya: menampilkan dashboard secara bertahap begitu tiap agent selesai.
+5. **`matchScore` belum terkalibrasi** — penilaian Gemma untuk membandingkan antar-lowongan, bukan
+   probabilitas dari data penerimaan nyata.
+6. **±100 detik per analisis.** Turun dari 174 detik, tetap terasa lama. Berikutnya: dashboard
+   tampil bertahap begitu tiap agent selesai.
 
 ## Tautan Proyek
 
@@ -179,20 +190,17 @@ Skill, Interview).
 npm install
 
 cp .env.example .env
-# Isi GOOGLE_CLOUD_PROJECT, lalu salah satu kredensial:
-#   GOOGLE_ACCESS_TOKEN=...            (hasil `gcloud auth print-access-token`)
-#   GOOGLE_APPLICATION_CREDENTIALS=... (path service account JSON)
+# Isi GOOGLE_CLOUD_PROJECT + salah satu: GOOGLE_ACCESS_TOKEN
+# atau GOOGLE_APPLICATION_CREDENTIALS
 
-npm run gemma:test   # menguji koneksi, streaming, dan structured output
-npm run dev          # buka http://localhost:3000
-
+npm run gemma:test   # uji koneksi, streaming, structured output
+npm run dev          # http://localhost:3000
 npm test             # 23 tes offline, tanpa jaringan
-npm run demo         # pipeline yang sama di terminal, berguna untuk debugging
+npm run demo         # pipeline sama di terminal, untuk debugging
 ```
 
 ## Pengungkapan
 
 - **Model:** Gemma 4 26B (`gemma-4-26b-a4b-it-maas`) via Vertex AI Model Garden.
 - **API eksternal:** tidak ada selain Vertex AI.
-- **Dataset:** tidak ada. `data/sample-cv.txt` dan `data/sample-jobs.json` adalah contoh sintetis
-  yang ditulis khusus untuk proyek ini.
+- **Dataset:** tidak ada. `data/sample-cv.txt` dan `data/sample-jobs.json` contoh sintetis.
