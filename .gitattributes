@@ -1,0 +1,21 @@
+# Berkas biner tidak boleh kena normalisasi akhir baris.
+# Tanpa ini, PDF/gambar rusak saat di-clone di Windows karena LF diubah jadi CRLF.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+
+# Sumber kode disimpan dengan LF di repo, apa pun platform kontributornya.
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.js    text eol=lf
+*.mjs   text eol=lf
+*.json  text eol=lf
+*.css   text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.svg   text eol=lf
