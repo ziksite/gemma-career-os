@@ -203,7 +203,9 @@ Saya cantumkan terbuka, karena menyembunyikannya hanya menunda ketahuan:
 
 Daftar lowongan masih dari kumpulan contoh — penilaian peluangnya nyata, daftarnya belum. Ini
 dinyatakan langsung di dalam aplikasi lewat spanduk "segera realtime", bukan disembunyikan di
-footer. Unggah PDF baru berupa antarmuka bertanda "segera". Belum ada persistensi, jadi Career Twin
+footer. Unggah CV PDF sudah berfungsi — ekstraksi teks berjalan di browser, jadi berkasnya tidak
+pernah dikirim ke server — tetapi PDF hasil pindaian belum bisa dibaca karena tidak punya lapisan
+teks. Belum ada persistensi, jadi Career Twin
 belum tumbuh antar sesi. `matchScore` adalah penilaian Gemma, berguna untuk membandingkan
 antar-lowongan, bukan probabilitas dari data penerimaan nyata. Dan satu analisis penuh masih makan
 ±100 detik — sudah turun dari 174, tetap terasa lama.

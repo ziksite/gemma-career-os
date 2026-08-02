@@ -153,11 +153,11 @@ baru di latar belakang), dan Vertex AI Embeddings + pgvector (pencocokan awal CV
 
 ## Fungsionalitas dan Keterbatasan yang Diketahui
 
-**Fitur yang berjalan:** visualisasi delapan agent dengan log bertimestamp, parsing CV menjadi
-profil terstruktur, Career Health Score deterministik per komponen, misi harian lima hari yang bisa
-dicentang, ranking lowongan dengan peluang lolos dan verdict, analisis keyword dan penghalang wajib
-ATS, penulisan ulang CV sebelum/sesudah, roadmap belajar terurut dampak, dan pertanyaan interview
-yang menyasar celah kandidat.
+**Fitur yang berjalan:** unggah CV PDF dengan ekstraksi teks di browser plus pratinjau dokumen asli,
+visualisasi delapan agent dengan log bertimestamp, Career Health Score deterministik per komponen,
+misi harian lima hari yang bisa dicentang, ranking lowongan dengan peluang lolos dan verdict,
+analisis keyword dan penghalang wajib ATS, penulisan ulang CV sebelum/sesudah, roadmap belajar
+terurut dampak, dan pertanyaan interview yang menyasar celah kandidat.
 
 **Alur pengguna utama:** sebutkan tujuan → tempel CV → jalankan analisis → delapan agent selesai
 dalam ±100 detik → baca dashboard bertab.
@@ -165,9 +165,10 @@ dalam ±100 detik → baca dashboard bertab.
 **Keterbatasan yang diketahui:**
 
 1. **Lowongan belum realtime.** Daftarnya dari kumpulan contoh — penilaian peluangnya nyata,
-   daftarnya belum. Dinyatakan terbuka di dalam aplikasi lewat spanduk "segera realtime".
-   Berikutnya: tarikan langsung dari LinkedIn, Jobstreet, Glints, dan Kalibrr.
-2. **Unggah PDF baru berupa antarmuka**, bertanda "segera"; pengguna menempel teks CV.
+   daftarnya belum. Dinyatakan terbuka di aplikasi lewat spanduk "segera realtime". Berikutnya:
+   tarikan langsung dari LinkedIn, Jobstreet, Glints, Kalibrr.
+2. **PDF hasil pindaian belum terbaca.** Ekstraksi mengandalkan lapisan teks; PDF berupa foto
+   ditolak dengan pesan jelas. OCR belum ada.
 3. **Belum ada persistensi**, sehingga Career Twin belum tumbuh antar sesi.
 4. **Belum ada autentikasi.** Satu pengguna per sesi browser.
 5. **`matchScore` belum terkalibrasi** — penilaian Gemma untuk membandingkan antar-lowongan, bukan

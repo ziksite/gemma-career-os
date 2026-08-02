@@ -243,9 +243,11 @@ Disebutkan terbuka karena juri menilai kejujuran teknis:
    disiapkan supaya sumbernya tinggal diganti. Ini **dinyatakan terbuka di dalam aplikasi**
    lewat spanduk "segera realtime" pada tab Lowongan, bukan disembunyikan: penilaian
    peluangnya nyata, daftarnya yang belum.
-2. **Unggah PDF belum aktif.** Ditampilkan di antarmuka sebagai area unggah bertanda
-   "segera", sengaja non-interaktif, dengan arahan untuk sementara menempel teks CV.
-   Alasan menampilkannya: bentuk akhir produk jadi jelas tanpa mengklaim yang belum ada.
+2. **PDF hasil pindaian belum bisa dibaca.** Unggah CV sudah berfungsi — PDF/TXT/MD, ekstraksi
+   teks berjalan di browser lewat pdf.js sehingga berkasnya tidak pernah dikirim ke server, dan
+   dokumen aslinya bisa dipratinjau berdampingan dengan teks hasil ekstraksi. Yang belum:
+   PDF berupa foto atau pindaian tidak punya lapisan teks, sehingga ditolak dengan pesan yang
+   mengarahkan pengguna menempel teksnya manual. OCR belum ada.
 3. **Tidak ada persistensi.** Hasil onboarding hanya hidup di state browser. Refresh
    halaman berarti mengulang analisis dari awal, dan Career Twin tidak tumbuh antar-sesi
    seperti yang dijanjikan konsepnya.

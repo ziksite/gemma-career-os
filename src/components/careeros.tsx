@@ -11,7 +11,8 @@ import {
   type AgentStatus,
   type LogLine,
 } from './swarm-panel';
-import { Badge, Button, Card, CardHead, Logo, SoonBadge } from './ui';
+import { CvInput } from './cv-input';
+import { Badge, Button, Card, CardHead, Logo } from './ui';
 
 type Phase = 'idle' | 'running' | 'done';
 
@@ -253,60 +254,19 @@ export function CareerApp() {
 
                 {/* Langkah 2 — CV */}
                 <div>
-                  <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      <StepDot n={2} />
-                      <label htmlFor="cv" className="text-sm font-medium">
-                        CV kamu
-                      </label>
-                    </div>
-                    <button
-                      onClick={loadSample}
-                      disabled={phase === 'running'}
-                      className="text-xs text-accent transition hover:underline disabled:opacity-40"
-                    >
-                      pakai CV contoh
-                    </button>
+                  <div className="mb-2 flex items-center gap-2">
+                    <StepDot n={2} />
+                    <label htmlFor="cv" className="text-sm font-medium">
+                      CV kamu
+                    </label>
                   </div>
 
-                  {/* Upload PDF — tampilan saja, belum aktif */}
-                  <div
-                    aria-disabled
-                    className="mb-3 flex cursor-not-allowed flex-wrap items-center gap-3 rounded-xl border border-dashed border-line-strong bg-surface-2/50 px-4 py-3.5"
-                  >
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-surface text-ink-3 shadow-sm">
-                      <svg viewBox="0 0 24 24" className="size-4.5" fill="none" strokeWidth={2} stroke="currentColor">
-                        <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3" strokeLinecap="round" />
-                      </svg>
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <p className="flex flex-wrap items-center gap-2 text-sm font-medium text-ink-2">
-                        Unggah CV dalam PDF
-                        <SoonBadge />
-                      </p>
-                      <p className="mt-0.5 text-xs text-ink-3">
-                        Nanti CV bisa langsung diunggah dan dibaca otomatis. Untuk sekarang,
-                        tempel teksnya di bawah.
-                      </p>
-                    </div>
-                  </div>
-
-                  <textarea
-                    id="cv"
+                  <CvInput
                     value={resumeText}
-                    onChange={(e) => setResumeText(e.target.value)}
+                    onChange={setResumeText}
                     disabled={phase === 'running'}
-                    rows={14}
-                    placeholder="Tempel teks CV-mu di sini…"
-                    className="w-full resize-y rounded-xl border border-line bg-surface-2/40 px-4 py-3 font-mono text-xs leading-relaxed outline-none transition placeholder:text-ink-3 focus:border-accent focus:bg-surface focus:ring-3 focus:ring-accent-soft disabled:opacity-60"
+                    onUseSample={loadSample}
                   />
-                  <p className="mt-2 font-mono text-[11px] text-ink-3">
-                    {resumeText.trim().length} karakter
-                    {resumeText.trim().length > 0 && resumeText.trim().length < 100
-                      ? ' — minimal 100'
-                      : ''}
-                  </p>
                 </div>
 
                 {error && (
